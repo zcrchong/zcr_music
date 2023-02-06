@@ -1,20 +1,51 @@
-import React, { memo } from 'react'
-import type { FC,ReactNode } from 'react'
+import React, { memo } from "react";
+import type { FC, ReactNode } from "react";
+import {
+  HeaderLeft,
+  HeaderWrapper,
+  HeaderRight,
+} from "@/components/app-header/style";
+import headerTitles from '@/assets/data/header_titles.json'
 import { Link } from 'react-router-dom'
-
 interface IProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
+
 const AppHeader: FC<IProps> = () => {
+  function showItem(item: any) {
+    if (item.type === 'path'){
+      return <Link to={item.link}>{item.title}</Link>
+    } else {
+      return(
+        <a href={item.link} rel="noreferrer" target="_blank" >{item.title}</a>
+      )
+    }
+  }
   return (
     <div>
-      <div className="nav">
-        <Link to="/discover">发现音乐</Link>
-        <Link to="/mine">我的音乐</Link>
-        <Link to="/focus">关注</Link>
-        <Link to="/download">下载客户端</Link>
-      </div>
+      <HeaderWrapper>
+        <div className="content wrap-v1">
+          <HeaderLeft>
+            <a className="logo sprite_01" href="/">
+              网易云音乐
+            </a>
+            <div className='title-list'>
+              {
+                headerTitles.map((item)=>{
+                  return(
+                    <div className='item' key={item.title}>
+                      { showItem(item) }
+                    </div>
+                  )
+                }
+                )
+              }
+             </div>
+          </HeaderLeft>
+          <HeaderRight>right</HeaderRight>
+        </div>
+      </HeaderWrapper>
     </div>
-  )
-}
-export default memo(AppHeader)
+  );
+};
+export default memo(AppHeader);
