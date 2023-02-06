@@ -1,10 +1,10 @@
-import React, { memo } from 'react'
-import type { FC, ReactNode } from 'react'
+import React, { memo } from "react";
+import type { FC, ReactNode } from "react";
 
 interface IProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
 const DjRadio: FC<IProps> = () => {
-  return <div>DjRadio</div>
-}
-export default memo(DjRadio)
+  return <div>DjRadio</div>;
+};
+export default memo(DjRadio);

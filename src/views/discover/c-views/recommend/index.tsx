@@ -1,10 +1,22 @@
-import React, { memo } from 'react'
-import type { FC, ReactNode } from 'react'
+import React, { memo, useEffect } from "react";
+import type { FC, ReactNode } from "react";
+import zcrRequest from "@/service";
 
 interface IProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
+
 const Recommend: FC<IProps> = () => {
-  return <div>Recommend</div>
-}
-export default memo(Recommend)
+  // 测试网络请求
+  useEffect(() => {
+    zcrRequest
+      .get({
+        url: "/banner",
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  });
+  return <div>Recommend</div>;
+};
+export default memo(Recommend);
