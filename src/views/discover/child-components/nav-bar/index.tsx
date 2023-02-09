@@ -1,4 +1,6 @@
+// @ts-ignore
 import React, { memo } from "react";
+// @ts-ignore
 import type { FC, ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 import { NavWrapper } from "@/views/discover/child-components/nav-bar/style";
@@ -23,4 +25,5 @@ const NavBar: FC<IProps> = () => {
     </NavWrapper>
   );
 };
+// @ts-ignore
 export default memo(NavBar);

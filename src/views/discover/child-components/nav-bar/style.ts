@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const NavWrapper = styled.div`
-    height: 30px;
-    background-color: #c20c0c;
+  height: 30px;
+  background-color: #c20c0c;
 
   .nav {
     display: flex;
@@ -29,4 +29,4 @@ export const NavWrapper = styled.div`
       }
     }
   }
-`
+`;
